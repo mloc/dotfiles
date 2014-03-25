@@ -30,6 +30,11 @@ alias much='git'
 
 alias publish='python3 -m http.server 8080'
 
+alias tt='cat ~/timetable'
+export CC=/usr/bin/clang
+export CXX=/usr/bin/clang++
+export TERMINAL=/usr/bin/xfce4-terminal
+
 # create a zkbd compatible hash;
 # to add other keys to this hash, see: man 5 terminfo
 typeset -A key
