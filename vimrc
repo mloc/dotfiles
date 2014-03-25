@@ -5,7 +5,7 @@ source ~/.vim_runtime/vimrcs/filetypes.vim
 source ~/.vim_runtime/vimrcs/plugins_config.vim
 source ~/.vim_runtime/vimrcs/extended.vim
 
-call pathogen#infect('~/.vim_plugins/{}')
+call pathogen#infect('~/.vim/bundle/{}')
 
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
