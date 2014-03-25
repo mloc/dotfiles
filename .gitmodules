@@ -1,0 +1,6 @@
+[submodule "vim_runtime"]
+	path = vim_runtime
+	url = git@github.com:amix/vimrc.git
+[submodule "vim_plugins/vim-dm-syntax"]
+	path = vim_plugins/vim-dm-syntax
+	url = git@github.com:wlue/vim-dm-syntax.git
