@@ -6,12 +6,14 @@ files="bashrc screenrc vimrc zshrc zsh tmux.conf tmuxline screenrc vim_runtime v
 # list of files/folders to symlink in homedir
 
 # create dotfiles_old in homedir
-echo "Creating $olddir for backup of any existing dotfiles in ~"
-mkdir -p $olddir
-echo "...done"
+if ! [[ -d $olddir ]]; then
+    echo "Creating $olddir for backup of any existing dotfiles in ~"
+    mkdir -p $olddir
+    echo "...done"
+fi
 
 # change to the dotfiles directory
-echo "Changing to the $dir directory"
+echo "Moving to $dir"
 cd $dir
 echo "...done"
 
@@ -24,7 +26,7 @@ for file in $files; do
             echo "Moving .$file from ~ to $olddir"
             mv ~/.$file $olddir/$file
         fi
-        echo "Creating symlink to $file in home directory."
+        echo "Creating symlink to .$file in ~"
         ln -s $dir/$file ~/.$file
     fi
 done
