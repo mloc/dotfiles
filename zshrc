@@ -22,7 +22,11 @@ zstyle ':completion:*' menu select
 
 alias tmux='tmux -2'
 
-alias ls='ls --color=auto'
+if [[ `uname` = "FreeBSD" ]]; then 
+    alias ls='ls -G'
+else
+    alias ls='ls --color=auto'
+fi
 
 alias wow='git status'
 alias such='git'
