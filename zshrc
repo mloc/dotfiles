@@ -30,6 +30,7 @@ alias tmux='tmux -2'
 
 if [[ `uname` = "FreeBSD" ]]; then 
     alias ls='ls -G'
+    export LANG=en_IE.UTF-8
 else
     alias ls='ls --color=auto'
 fi
