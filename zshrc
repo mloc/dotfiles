@@ -8,6 +8,12 @@ setopt appendhistory autocd extendedglob notify
 bindkey -v
 # End of lines configured by zsh-newuser-install
 # The following lines were added by compinstall
+
+zstyle ':completion:*' completer _expand _complete _ignored
+zstyle ':completion:*' list-prompt '%SAt %p: Hit TAB for more, or the character to insert%s'
+zstyle ':completion:*' matcher-list '' 'm:{[:lower:][:upper:]}={[:upper:][:lower:]}' 'r:|[._-]=** r:|=**'
+zstyle ':completion:*' menu select=1
+zstyle ':completion:*' select-prompt %SScrolling active: current selection at %p%s
 zstyle :compinstall filename '/home/mloc/.zshrc'
 
 autoload -Uz compinit
@@ -18,11 +24,16 @@ autoload -U promptinit
 promptinit
 prompt redhat
 
-zstyle ':completion:*' menu select
+EDITOR=vim
 
 alias tmux='tmux -2'
 
-alias ls='ls --color=auto'
+if [[ `uname` = "FreeBSD" ]]; then 
+    alias ls='ls -G'
+    export LANG=en_IE.UTF-8
+else
+    alias ls='ls --color=auto'
+fi
 
 alias wow='git status'
 alias such='git'
