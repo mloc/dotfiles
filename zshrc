@@ -24,6 +24,8 @@ autoload -U promptinit
 promptinit
 prompt redhat
 
+export TERM=xterm
+
 EDITOR=vim
 
 alias tmux='tmux -2'
