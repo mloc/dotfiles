@@ -4,6 +4,6 @@
 [submodule "vim/bundle/vim-dm-syntax"]
 	path = vim/bundle/vim-dm-syntax
 	url = git@github.com:wlue/vim-dm-syntax.git
-[submodule "vim_plugins/ag.vim"]
-	path = vim_plugins/ag.vim
+[submodule "vim/bundle/ag.vim"]
+	path = vim/bundle/ag.vim
 	url = https://github.com/rking/ag.vim
