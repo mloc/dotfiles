@@ -20,3 +20,12 @@ set noshowmode
 
 set fillchars+=vert:\ 
 
+set switchbuf=useopen
+
+set nu
+
+au VimEnter * RainbowParenthesesToggle
+au Syntax * RainbowParenthesesLoadRound
+au Syntax * RainbowParenthesesLoadSquare
+au Syntax * RainbowParenthesesLoadBraces
+
