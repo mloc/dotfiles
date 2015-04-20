@@ -1,37 +1,11 @@
-set runtimepath+=~/.vim_runtime
-set runtimepath+=~/.vim " haiku why
-
-source ~/.vim_runtime/vimrcs/basic.vim
-source ~/.vim_runtime/vimrcs/filetypes.vim
-source ~/.vim_runtime/vimrcs/plugins_config.vim
-source ~/.vim_runtime/vimrcs/extended.vim
-
 call pathogen#infect('~/.vim/bundle/{}')
 
-let g:airline_powerline_fonts = 1
-let g:airline#extensions#tabline#enabled = 1
-let g:airline_theme = 'murmur'
-
-colorscheme molokai
-let g:molokai_original = 1
-let g:rehash256 = 1
-
-set t_Co=256
+source ~/.vim/rcs/base.vim
+source ~/.vim/rcs/keys.vim
+source ~/.vim/rcs/appearance.vim
+source ~/.vim/rcs/convenience.vim
 
 set ttimeoutlen=50
 set noshowmode
 
-set fillchars+=vert:\ 
-
 set switchbuf=useopen
-
-set nu
-
-au VimEnter * RainbowParenthesesToggle
-au Syntax * RainbowParenthesesLoadRound
-au Syntax * RainbowParenthesesLoadSquare
-au Syntax * RainbowParenthesesLoadBraces
-
-autocmd BufEnter * set mouse=
-
-nnoremap <F9> :Make<CR>
