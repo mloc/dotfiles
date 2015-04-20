@@ -23,4 +23,6 @@ alias publish='python3 -m http.server 8080'
 alias fuck="sudo  !!"
 alias ffs="sudo  !!"
 
-PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+if [[ $TERM == xterm-termite ]]; then
+    TERM=xterm
+fi

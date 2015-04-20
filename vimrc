@@ -12,7 +12,9 @@ let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_theme = 'murmur'
 
-colorscheme molokai-mod
+colorscheme molokai
+let g:molokai_original = 1
+let g:rehash256 = 1
 
 set t_Co=256
 
@@ -31,3 +33,5 @@ au Syntax * RainbowParenthesesLoadSquare
 au Syntax * RainbowParenthesesLoadBraces
 
 autocmd BufEnter * set mouse=
+
+nnoremap <F9> :Make<CR>
