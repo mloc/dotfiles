@@ -24,28 +24,7 @@ autoload -U promptinit
 promptinit
 prompt redhat
 
-EDITOR=vim
-
-alias tmux='tmux -2'
-
-if [[ `uname` = "FreeBSD" ]]; then 
-    alias ls='ls -G'
-    export LANG=en_IE.UTF-8
-else
-    alias ls='ls --color=auto'
-fi
-
-alias wow='git status'
-alias such='git'
-alias very='git'
-alias so='git'
-alias much='git'
-
-alias publish='python3 -m http.server 8080'
-
 alias tt='cat ~/timetable'
-export CC=/usr/bin/clang
-export CXX=/usr/bin/clang++
 export TERMINAL=/usr/bin/xfce4-terminal
 
 # create a zkbd compatible hash;
@@ -89,3 +68,4 @@ if (( ${+terminfo[smkx]} )) && (( ${+terminfo[rmkx]} )); then
     zle -N zle-line-finish
 fi
 
+source ~/.commonrc
