@@ -9,7 +9,15 @@ autocmd BufWrite *.coffee :call DeleteTrailingWS()
 
 " Persistent/Saved undo
 try
-    set undodir=~/.vim/temp_dirs/undodir
+    set undodir=~/.vim/undodir
     set undofile
 catch
 endtry
+
+" ignore whitespace in diffs
+if &diff
+    set diffopt+=iwhite
+endif
+
+" open quickfix after grep
+autocmd QuickFixCmdPost *grep* cwindow

@@ -8,4 +8,6 @@ source ~/.vim/rcs/convenience.vim
 set ttimeoutlen=50
 set noshowmode
 
+set diffexpr=""
+
 set switchbuf=useopen

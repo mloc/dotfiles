@@ -8,8 +8,12 @@ map <leader>q :setlocal paste!<cr>
 map <silent> <leader><cr> :noh<cr> " quick nohl [amix]
 
 " buffer navigation
-nmap <Leader>p :bn<CR>
-nmap <Leader>i :bp<CR>
+nmap <leader>p :bn<CR>
+nmap <leader>i :bp<CR>
+
+" quickfix navigation
+nmap <leader>l :cn<CR>
+nmap <leader>j :cp<CR>
 
 " BufExplorer
 nmap <Leader>o :ToggleBufExplorer<CR>
