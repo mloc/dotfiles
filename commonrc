@@ -20,4 +20,6 @@ export VISUAL=vim
 export CC=/usr/bin/clang
 export CXX=/usr/bin/clang++
 
+export PATH=~/.bin:$PATH
+
 eval $(keychain --eval --agents ssh -Q --quiet id_rsa)

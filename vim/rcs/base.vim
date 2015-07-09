@@ -3,6 +3,7 @@ set nocompatible
 
 set backspace=eol,start,indent
 set whichwrap+=<,>,h,l
+set so=7
 
 set laststatus=2 " make sure air/statusline shows up
 

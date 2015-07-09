@@ -5,6 +5,8 @@ source ~/.vim/rcs/keys.vim
 source ~/.vim/rcs/appearance.vim
 source ~/.vim/rcs/convenience.vim
 
+source ~/.vim/rcs/nim.vim
+
 set ttimeoutlen=50
 set noshowmode
 
