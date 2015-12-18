@@ -20,6 +20,7 @@ export VISUAL=vim
 export CC=/usr/bin/clang
 export CXX=/usr/bin/clang++
 
-export PATH=~/.bin:$PATH
+export PATH=~/.local/bin:~/.bin:$PATH
+export PYTHONPATH=~/.pymod
 
 eval $(keychain --eval --agents ssh -Q --quiet id_rsa)

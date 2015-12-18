@@ -4,6 +4,7 @@ source ~/.vim/rcs/base.vim
 source ~/.vim/rcs/keys.vim
 source ~/.vim/rcs/appearance.vim
 source ~/.vim/rcs/convenience.vim
+source ~/.vim/rcs/config.vim
 
 source ~/.vim/rcs/nim.vim
 
