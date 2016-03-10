@@ -18,7 +18,7 @@
 	url = git@github.com:ConradIrwin/vim-bracketed-paste.git
 [submodule "vim/bundle/rainbow_parentheses.vim"]
 	path = vim/bundle/rainbow_parentheses.vim
-	url = git@github.com:kien/rainbow_parentheses.vim.git
+	url = git@github.com:eapache/rainbow_parentheses.vim.git
 [submodule "vim/bundle/vim-airline"]
 	path = vim/bundle/vim-airline
 	url = git@github.com:bling/vim-airline.git
@@ -49,9 +49,6 @@
 [submodule "vim/bundle/rust.vim"]
 	path = vim/bundle/rust.vim
 	url = https://github.com/rust-lang/rust.vim.git
-[submodule "vim/bundle/rainbow"]
-	path = vim/bundle/rainbow
-	url = git@github.com:luochen1990/rainbow.git
 [submodule "vim/bundle/vim-rails"]
 	path = vim/bundle/vim-rails
 	url = git@github.com:tpope/vim-rails.git
