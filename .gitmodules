@@ -52,3 +52,12 @@
 [submodule "vim/bundle/rainbow"]
 	path = vim/bundle/rainbow
 	url = git@github.com:luochen1990/rainbow.git
+[submodule "vim/bundle/vim-rails"]
+	path = vim/bundle/vim-rails
+	url = git@github.com:tpope/vim-rails.git
+[submodule "vim/bundle/vim-bundler"]
+	path = vim/bundle/vim-bundler
+	url = git@github.com:tpope/vim-bundler.git
+[submodule "vim/bundle/vim-sleuth"]
+	path = vim/bundle/vim-sleuth
+	url = git@github.com:tpope/vim-sleuth.git
