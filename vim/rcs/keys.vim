@@ -22,7 +22,7 @@ nmap <Leader>o :ToggleBufExplorer<CR>
 nmap <Leader>n :NERDTreeToggle<CR>
 
 " vim-dispatch
-nnoremap <Leader>k :Make<CR>
+nnoremap <Leader>k :Dispatch<CR>
 
 " ctrlp
 let g:ctrlp_map = '<c-f>'

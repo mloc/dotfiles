@@ -6,6 +6,7 @@ func! DeleteTrailingWS()
 endfunc
 autocmd BufWrite *.py :call DeleteTrailingWS()
 autocmd BufWrite *.coffee :call DeleteTrailingWS()
+autocmd BufWrite *.rs :call DeleteTrailingWS()
 
 " Persistent/Saved undo
 try

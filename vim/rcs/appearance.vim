@@ -9,6 +9,7 @@ set t_Co=256
 set fillchars+=vert:\ 
 
 set nu
+set relativenumber
 
 au VimEnter * RainbowParenthesesToggle
 au Syntax * RainbowParenthesesLoadRound
