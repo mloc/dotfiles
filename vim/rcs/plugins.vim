@@ -1,2 +1,5 @@
 Plugin 'rust-lang/rust.vim'
 Plugin 'Valloric/YouCompleteMe'
+Plugin 'jpalardy/vim-slime'
+Plugin 'kana/vim-textobj-user'
+Plugin 'bps/vim-textobj-python'
