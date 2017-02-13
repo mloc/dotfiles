@@ -2,7 +2,7 @@
 
 dir=~/.dotfiles                    # dotfiles directory
 olddir=~/.dotfiles/old             # old dotfiles backup directory
-files="bashrc screenrc vimrc zshrc zsh tmux.conf tmuxline screenrc vim weechat commonrc"
+files="bashrc screenrc vimrc zshrc zsh tmux.conf tmuxline screenrc vim commonrc"
 # list of files/folders to symlink in homedir
 
 # create dotfiles_old in homedir
