@@ -3,10 +3,12 @@ set hidden
 let g:go_fmt_command = "goimports"
 
 let g:LanguageClient_serverCommands = {
-    \ 'rust': ['~/.cargo/bin/rustup', 'run', 'stable', 'rls'],
+    \ 'rust': ['~/.local/bin/rust-analyzer'],
     \ 'go': ['~/go/bin/gopls'],
     \ }
 
+    "\ 'dm': ['~/.local/bin/dm-langserver'],
+    "
 let g:deoplete#enable_at_startup = 1
 
 inoremap <silent><expr><tab> pumvisible() ? "\<c-n>" : "\<tab>"
