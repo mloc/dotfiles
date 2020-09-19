@@ -8,3 +8,4 @@ runtime base.vim
 runtime keys.vim
 runtime appearance.vim
 runtime config.vim
+runtime coc.vim

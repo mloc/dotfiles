@@ -24,8 +24,7 @@ nmap <Leader>n :NERDTreeToggle<CR>
 " vim-dispatch
 nnoremap <Leader>k :Dispatch<CR>
 
-" ctrlp
-let g:ctrlp_map = '<c-p>'
+nmap <c-p> :FZF<CR>
 
 noremap <silent> <leader>d :call LanguageClient#textDocument_definition()<CR>
 noremap <silent> <leader>e :call LanguageClient#textDocument_references()<CR>
