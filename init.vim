@@ -1,3 +1,5 @@
+runtime preconfig.vim
+
 call plug#begin('~/.local/share/nvim/plugged')
 runtime plugins.vim
 call plug#end()
@@ -8,4 +10,5 @@ runtime base.vim
 runtime keys.vim
 runtime appearance.vim
 runtime config.vim
-runtime coc.vim
+runtime lsp.vim
+"runtime coc.vim

@@ -16,15 +16,17 @@ nmap <leader>l :cn<CR>
 nmap <leader>j :cp<CR>
 
 " BufExplorer
-nmap <Leader>o :ToggleBufExplorer<CR>
+nmap <Leader>o :Telescope buffers<CR>
 
 " NERDTree
-nmap <Leader>n :NERDTreeToggle<CR>
+nmap <Leader>n :Telescope file_browser<CR>
 
 " vim-dispatch
 nnoremap <Leader>k :Dispatch<CR>
 
-nmap <c-p> :FZF<CR>
+nmap <c-p> :Telescope find_files<CR>
+nmap <c-f> :Telescope live_grep<CR>
+nmap <c-h> :Telescope lsp_workspace_diagnostics<CR>
 
 noremap <silent> <leader>d :call LanguageClient#textDocument_definition()<CR>
 noremap <silent> <leader>e :call LanguageClient#textDocument_references()<CR>
