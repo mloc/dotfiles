@@ -26,7 +26,7 @@ nnoremap <Leader>k :Dispatch<CR>
 
 nmap <c-p> :Telescope find_files<CR>
 nmap <c-f> :Telescope live_grep<CR>
-nmap <c-h> :Telescope lsp_workspace_diagnostics<CR>
+nmap <c-h> :Telescope diagnostics<CR>
 
 noremap <silent> <leader>d :call LanguageClient#textDocument_definition()<CR>
 noremap <silent> <leader>e :call LanguageClient#textDocument_references()<CR>
