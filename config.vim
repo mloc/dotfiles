@@ -28,3 +28,14 @@ let g:go_fmt_command = "goimports"
 "  },
 "}
 "EOF
+
+lua <<EOF
+require("telescope").setup {
+  extensions = {
+    ["ui-select"] = {
+      require("telescope.themes").get_dropdown {}
+    }
+  }
+}
+require("telescope").load_extension("ui-select")
+EOF
