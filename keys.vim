@@ -3,7 +3,7 @@ let mapleader = ','
 nmap <leader>w :w!<cr>
 command W w !sudo tee % > /dev/null
 
-map <leader>q :setlocal paste!<cr>
+map <leader>p :setlocal paste!<cr>
 
 map <silent> <leader><cr> :noh<cr> " quick nohl [amix]
 
