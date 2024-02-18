@@ -11,7 +11,6 @@ return {
       {"<leader>xd", "<cmd>TroubleToggle document_diagnostics<cr>"},
       {"<leader>xq", "<cmd>TroubleToggle quickfix<cr>"},
       {"<leader>xl", "<cmd>TroubleToggle loclist<cr>"},
-      {"gR", "<cmd>Trouble lsp_references<cr>"},
     },
   }
 }

@@ -71,6 +71,7 @@ return {
   dependencies = {
     "SmiteshP/nvim-navic",
     "onsails/lspkind.nvim",
+    "folke/trouble.nvim",
   },
   config = lsp_config,
   keys = {
@@ -79,10 +80,10 @@ return {
     {"K", "<cmd>lua vim.lsp.buf.hover()<CR>"},
     {"g0", "<cmd>lua vim.lsp.buf.document_symbol()<CR>"},
     {"gW", "<cmd>lua vim.lsp.buf.workspace_symbol()<CR>"},
-    {"gd", "<cmd>lua vim.lsp.buf.definition()<CR>"},
+    {"gd", "<cmd>Trouble lsp_definitions<CR>"},
     {"gD", "<cmd>lua vim.lsp.buf.declaration()<CR>"},
     {"gi", "<cmd>lua vim.lsp.buf.implementation()<CR>"},
-    {"gr", "<cmd>lua vim.lsp.buf.references()<CR>"},
+    {"gr", "<cmd>Trouble lsp_references<cr>"},
     {"<C-k>", "<cmd>lua vim.lsp.buf.signature_help()<CR>"},
     {"gt", "<cmd>lua vim.lsp.buf.type_definition()<CR>"},
     {"[d", "<cmd>lua vim.diagnostic.goto_prev()<CR>"},
