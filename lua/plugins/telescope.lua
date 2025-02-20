@@ -1,7 +1,7 @@
 local telescope_config = function (_, opts)
   local telescope = require("telescope")
   local actions = require("telescope.actions")
-  vim.print(opts)
+  local open_with_trouble = require("trouble.sources.telescope").open
   telescope.setup {
     defaults = {
       path_display = function(popts, path)
@@ -14,8 +14,14 @@ local telescope_config = function (_, opts)
     pickers = {
       buffers = {
         mappings = {
-          i = {["<c-]>"] = actions.delete_buffer + actions.move_to_top},
-          n = {["<c-]>"] = actions.delete_buffer + actions.move_to_top},
+          i = {
+            ["<c-]>"] = actions.delete_buffer + actions.move_to_top,
+            ["<c-t>"] = open_with_trouble,
+          },
+          n = {
+            ["<c-]>"] = actions.delete_buffer + actions.move_to_top,
+            ["<c-t>"] = open_with_trouble,
+          },
         },
       },
     },
@@ -37,6 +43,7 @@ return {
       "nvim-lua/plenary.nvim",
       "nvim-telescope/telescope-file-browser.nvim",
       "nvim-telescope/telescope-ui-select.nvim",
+      "folke/trouble.nvim",
     },
     opts = {
       path_handlers = {},

@@ -22,3 +22,5 @@ vim.opt.relativenumber = true
 
 vim.opt.showmode = false
 vim.opt.updatetime = 500
+
+vim.opt.mouse = ""
