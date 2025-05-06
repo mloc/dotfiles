@@ -19,35 +19,6 @@ local function lsp_config(_, opts)
     if vim.lsp.tagfunc then
       vim.api.nvim_buf_set_option(bufnr, "tagfunc", "v:lua.vim.lsp.tagfunc")
     end
-
-    if client.server_capabilities.documentHighlightProvider then
-      local lspgroup = vim.api.nvim_create_augroup("LSP", { clear = true })
-      vim.api.nvim_create_autocmd({"CursorHold", "CursorHoldI"}, {
-        pattern = "<buffer>",
-        group = lspgroup,
-        callback = function(info)
-          vim.lsp.buf.document_highlight(info.buf)
-        end
-      })
-      vim.api.nvim_create_autocmd({"CursorMoved"}, {
-        pattern = "<buffer>",
-        group = lspgroup,
-        callback = function(info)
-          vim.lsp.util.buf_clear_references(info.buf)
-        end
-      })
-    end
-
-    --[[
-    vim.api.nvim_command("augroup LSP")
-    vim.api.nvim_command("autocmd!")
-    if client.server_capabilities.documentHighlightProvider then
-      vim.api.nvim_command("autocmd CursorHold  <buffer> lua vim.lsp.buf.document_highlight()")
-      vim.api.nvim_command("autocmd CursorHoldI <buffer> lua vim.lsp.buf.document_highlight()")
-      vim.api.nvim_command("autocmd CursorMoved <buffer> lua vim.lsp.util.buf_clear_references()")
-    end
-    vim.api.nvim_command("augroup END")
-    --]]
   end
 
   for _, f in pairs(opts.lsp_handlers_hooks) do
@@ -83,23 +54,30 @@ return {
       {"<leader>rn", "<cmd>lua vim.lsp.buf.rename()<CR>"},
       {"<leader>ca", "<cmd>lua vim.lsp.buf.code_action()<CR>"},
       {"K", "<cmd>lua vim.lsp.buf.hover()<CR>"},
-      {"g0", "<cmd>lua vim.lsp.buf.document_symbol()<CR>"},
+      {"g0", "<cmd>Trouble lsp_document_symbols auto_refresh=false<CR>"},
       {"gW", "<cmd>lua vim.lsp.buf.workspace_symbol()<CR>"},
       {"gd", "<cmd>Trouble lsp_definitions auto_refresh=false<CR>"},
-      {"gD", "<cmd>lua vim.lsp.buf.declaration()<CR>"},
-      {"gi", "<cmd>lua vim.lsp.buf.implementation()<CR>"},
+      {"gD", "<cmd>Trouble lsp_declarations auto_refresh=false<CR>"},
+      {"gi", "<cmd>Trouble lsp_implementations auto_refresh=false<CR>"},
       {"gr", "<cmd>Trouble lsp_references auto_refresh=false<cr>"},
       {"<C-k>", "<cmd>lua vim.lsp.buf.signature_help()<CR>"},
-      {"gt", "<cmd>lua vim.lsp.buf.type_definition()<CR>"},
+      {"gt", "<cmd>Trouble lsp_type_definitions auto_refresh=false<CR>"},
       {"[d", "<cmd>lua vim.diagnostic.goto_prev()<CR>"},
       {"]d", "<cmd>lua vim.diagnostic.goto_next()<CR>"},
     },
     opts = {
-      configs = {},
+      configs = {
+        pylsp = {},
+        gopls = {},
+        buck2 = {},
+        nixd = {},
+      },
       on_attach_hooks = {
         navic = function(c, b)
-          local navic = require("nvim-navic")
-          navic.attach(c, b)
+          if c:supports_method('textDocument/documentSymbol') then
+            local navic = require("nvim-navic")
+            navic.attach(c, b)
+          end
         end,
       },
       lsp_handlers_hooks = {},
@@ -112,5 +90,62 @@ return {
     config = function(_, _)
       require("neoconf").setup({})
     end,
+  },
+  {
+    "RRethy/vim-illuminate",
+    lazy = false,
+  },
+  {
+    "neovim/nvim-lspconfig",
+    opts = {
+      configs = {
+        lua_ls = {
+          on_init = function(client)
+            if client.workspace_folders then
+              local path = client.workspace_folders[1].name
+              if
+                path ~= vim.fn.stdpath('config')
+                and (vim.uv.fs_stat(path .. '/.luarc.json') or vim.uv.fs_stat(path .. '/.luarc.jsonc'))
+              then
+                return
+              end
+            end
+
+            client.config.settings.Lua = vim.tbl_deep_extend('force', client.config.settings.Lua, {
+              runtime = {
+                -- Tell the language server which version of Lua you're using (most
+                -- likely LuaJIT in the case of Neovim)
+                version = 'LuaJIT',
+                -- Tell the language server how to find Lua modules same way as Neovim
+                -- (see `:h lua-module-load`)
+                path = {
+                  'lua/?.lua',
+                  'lua/?/init.lua',
+                },
+              },
+              -- Make the server aware of Neovim runtime files
+              workspace = {
+                checkThirdParty = false,
+                library = {
+                  vim.env.VIMRUNTIME,
+                  '${3rd}/luv/library',
+                  '${3rd}/busted/library',
+                }
+                -- Or pull in all of 'runtimepath'.
+                -- NOTE: this is a lot slower and will cause issues when working on
+                -- your own configuration.
+                -- See https://github.com/neovim/nvim-lspconfig/issues/3189
+                -- library = {
+                --   vim.api.nvim_get_runtime_file('', true),
+                -- }
+              }
+            })
+          end,
+          settings = {
+            Lua = {}
+          },
+        },
+      },
+    },
   },
 }

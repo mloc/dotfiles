@@ -1,3 +1,6 @@
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
+
 vim.opt.scrolloff = 3
 vim.opt.wildignore = {'*.o', '*~', '*.pyc', '.git*', '.hg*', '.svn*'}
 
@@ -24,3 +27,5 @@ vim.opt.showmode = false
 vim.opt.updatetime = 500
 
 vim.opt.mouse = ""
+
+vim.opt.signcolumn = "yes"

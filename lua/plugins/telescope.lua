@@ -34,6 +34,7 @@ local telescope_config = function (_, opts)
   telescope.load_extension("file_browser")
   telescope.load_extension("ui-select")
   telescope.load_extension("ui-select")
+  telescope.load_extension("egrepify")
 end
 
 return {
@@ -44,6 +45,7 @@ return {
       "nvim-telescope/telescope-file-browser.nvim",
       "nvim-telescope/telescope-ui-select.nvim",
       "folke/trouble.nvim",
+      "fdschmidt93/telescope-egrepify.nvim",
     },
     opts = {
       path_handlers = {},
@@ -53,11 +55,11 @@ return {
       {"<leader>o", "<cmd>Telescope buffers<cr>"},
       {"<leader>n", "<cmd>Telescope file_browser<cr>"},
       {"<c-p>", "<cmd>Telescope find_files<cr>"},
-      {"<c-f>", "<cmd>Telescope live_grep<cr>"},
+      {"<c-f>", "<cmd>Telescope egrepify<cr>"},
       {"<c-h>", "<cmd>Telescope diagnostics<cr>"},
       {"<leader><c-n>", "<cmd>Telescope file_browser path=%:p:h<cr>"},
       {"<leader><c-p>", "<cmd>Telescope find_files cwd=%:p:h<cr>"},
-      {"<leader><c-f>", "<cmd>Telescope live_grep cwd=%:p:h<cr>"},
+      {"<leader><c-f>", "<cmd>Telescope egrepify cwd=%:p:h<cr>"},
     },
   },
 }
