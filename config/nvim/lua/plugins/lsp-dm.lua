@@ -1,5 +1,10 @@
 return {
   {
+    dir = "~/devel/vim-devel/vimdm",
+    dev = true,
+    lazy = false,
+  },
+  {
     "neovim/nvim-lspconfig",
     opts = {
       configs = {
